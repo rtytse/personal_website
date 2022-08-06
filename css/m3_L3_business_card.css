@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+.business-card-container {
+    width: 300px;
+    height: 500px;
+    /* background-color: black; */
+    border: 1px solid #dadada;
+    box-shadow: 1px 7px 29px 0px rgba(100, 100, 111, 0.2);
+    position: absolute;
+    /* percentage of container */
+    top: 50%;
+    left: 50%;
+    /* percentage of element size */
+    /* transform: translateY(-50%) translateX(-50%); */
+    transform: translate(-50%,-50%);
+    /* border-radius: 100px; */
+}
+
+/* Flexport method */
+/* body {
+    display: flex;
+    Scren size
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+} */
+
+.business-card-front {
+    display: flex;
+    height: 100%;
+    background-color: #424856;
+    justify-content: center;
+    align-items: center;
+    /* not visible the back side after turning back */
+    backface-visibility: hidden;
+}
+
+.business-card-back {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    /* center inline elements, including img, a, h1, p, span, excluding div (block-level) */
+    text-align: center;
+}
+
+
+.business-card-front, .business-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#logo {
+    max-width: 40%;
+}
+
+#logo2 {
+    max-width: 40%;
+}
+
+#avatar {
+    clip-path: circle(75px at center);
+}
+
+
+.business-card-inner {
+    height: 100%;
+    width: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.business-card-container:hover .business-card-inner {
+    transform: rotateY(180deg);
+}
+
+h1 {
+    font-size: 20px;
+    /* font-style: italic; */
+    font-family:'Arial', Arial, monospace
+}
+
+h2 {
+    font-size: 13px;
+    font-family:'Arial', Arial, monospace
+}
+
+.border {
+    width: 100px;
+    height: 1px;
+    background-color: black;
+    margin: 50px auto;
+    opacity: 100%;
+    /* border-bottom: 4px soild black; */
+}
+
+a {
+    margin: 0px auto;
+    font-size: 10px;
+    font-family:'Arial', Arial, monospace
+}
+
+.nav-link {
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: grey;
+    font-size: 25px;
+}
